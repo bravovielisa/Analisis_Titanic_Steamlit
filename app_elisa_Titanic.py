@@ -24,29 +24,29 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 #-------------------COSAS QUE VAMOS A USAR EN TODA LA APP-----------------------#
 #opening the image
-image1 = Image.open(r'C:\Users\User\Documents\GitHub\Proyecto-Titanic\img\mapa.jpg')
-image2 = Image.open(r'C:\Users\User\Documents\GitHub\Proyecto-Titanic\img\joseph-bruce-owner.jpg')
-image3 = Image.open(r'C:\Users\User\Documents\GitHub\Proyecto-Titanic\img\capitan_.jpg')
-image4 = Image.open(r'C:\Users\User\Documents\GitHub\Proyecto-Titanic\img\Millvina1.jpg')
-image5 = Image.open(r'C:\Users\User\Documents\GitHub\Proyecto-Titanic\img\millvina_news.jpg')
-image6 = Image.open(r'C:\Users\User\Documents\GitHub\Proyecto-Titanic\img\Cave_list.jpg')
+image1 = Image.open(r'C:\Users\User\Documents\GitHub\Analisis_Titanic\img\mapa.jpg')
+image2 = Image.open(r'C:\Users\User\Documents\GitHub\Analisis_Titanic\img\joseph-bruce-owner.jpg')
+image3 = Image.open(r'C:\Users\User\Documents\GitHub\Analisis_Titanic\img\capitan_.jpg')
+image4 = Image.open(r'C:\Users\User\Documents\GitHub\Analisis_Titanic\img\Millvina1.jpg')
+image5 = Image.open(r'C:\Users\User\Documents\GitHub\Analisis_Titanic\img\millvina_news.jpg')
+image6 = Image.open(r'C:\Users\User\Documents\GitHub\Analisis_Titanic\img\Cave_list.jpg')
 
 # gif from local file
 #Gif Info
-file_ = open(r"C:\Users\User\Documents\GitHub\Proyecto-Titanic\img\jackyrose.gif", "rb")
+file_ = open(r"C:\Users\User\Documents\GitHub\Analisis_Titanic\img\jackyrose.gif", "rb")
 contents = file_.read()
 data_url1 = base64.b64encode(contents).decode("utf-8")
 file_.close()
 
 #Gif conclusiones
-file_2 = open(r"C:\Users\User\Documents\GitHub\Proyecto-Titanic\img\titanic-band.gif", "rb")
+file_2 = open(r"C:\Users\User\Documents\GitHub\Analisis_Titanic\img\titanic-band.gif", "rb")
 contents2 = file_2.read()
 data_url2 = base64.b64encode(contents2).decode("utf-8")
 file_2.close()
 
 
 #Dataframes
-df = pd.read_csv(r'C:\Users\User\Documents\GitHub\Proyecto-Titanic\data\titanic.csv')
+df = pd.read_csv(r'C:\Users\User\Documents\GitHub\Analisis_Titanic\data\titanic.csv')
 
 df1=df.copy() # Se hace una copia para trabajar sobre la copia y limpiar los datos sobre esta
 #------------Limpieza de datos-----------#
@@ -72,8 +72,8 @@ df_filtrado_Light=df[df['Name'].str.contains('Light')]
 embarked_counts = df1['Embarked'].value_counts().sort_index()
 
 # Tabla excel hecha por mi conversión precios (pestaña 3):
-dfex1 = pd.read_excel(r'C:\Users\User\Documents\GitHub\Proyecto-Titanic\data\fare_titanic.xlsx',sheet_name='1912')
-dfex2 = pd.read_excel(r'C:\Users\User\Documents\GitHub\Proyecto-Titanic\data\fare_titanic.xlsx',sheet_name='Actualidad')
+dfex1 = pd.read_excel(r'C:\Users\User\Documents\GitHub\Analisis_Titanic\data\fare_titanic.xlsx',sheet_name='1912')
+dfex2 = pd.read_excel(r'C:\Users\User\Documents\GitHub\Analisis_Titanic\data\fare_titanic.xlsx',sheet_name='Actualidad')
 # Calculo de media de precios por clase:
 df1_mean_fare = df1.groupby(['Pclass'])['Fare'].mean()
 
