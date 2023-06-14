@@ -5,6 +5,6 @@ pandas
 seaborn
 plotly.express
 plotly.graph_objects
-from PIL import Image
+Image
 base64
 io
