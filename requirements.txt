@@ -1,10 +1,7 @@
 streamlit
-numpy 
+numpy
 matplotlib
 pandas
 seaborn
-plotly.express
-plotly.graph_objects
-Image
-base64
-io
+plotly
+Pillow
